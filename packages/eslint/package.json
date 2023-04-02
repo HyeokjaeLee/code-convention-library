@@ -1,0 +1,11 @@
+{
+  "name": "eslint",
+  "packageManager": "yarn@3.5.0",
+  "devDependencies": {
+    "eslint": "^8.37.0",
+    "eslint-config-fbjs": "^4.0.0"
+  },
+  "peerDependencies": {
+    "eslint": "^8.37.0"
+  }
+}

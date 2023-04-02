@@ -1,9 +1,12 @@
 {
   "name": "code-convention-library",
   "version": "1.0.0",
-  "main": "index.js",
   "repository": "https://github.com/HyeokjaeLee/code-convention-library",
   "author": "HyeokjaeLee <leehyeokjae97@gmail.com>",
   "license": "MIT",
-  "packageManager": "yarn@3.5.0"
+  "packageManager": "yarn@3.5.0",
+  "workspaces": [
+    "packages/*",
+    "test/*"
+  ]
 }
