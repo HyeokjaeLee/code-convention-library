@@ -8,6 +8,3 @@
  *
  * console.log('경고'); // warn
  */
-
-
-console.log('success');

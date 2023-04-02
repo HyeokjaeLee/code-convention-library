@@ -30,7 +30,7 @@ module.exports = {
      * @description 중첩 삼항연산자
      * @link https://eslint.org/docs/latest/rules/no-nested-ternary
      */
-    'no-nested-ternary': 'warn',
+    'no-nested-ternary': 'error',
     /**
      * @description 제한 없는 구문
      * @link https://eslint.org/docs/latest/rules/no-restricted-syntax
