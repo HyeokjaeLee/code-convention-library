@@ -46,5 +46,10 @@ module.exports = {
      * @link https://eslint.org/docs/latest/rules/no-console
      */
     'no-console': 'warn',
+    /**
+     * @description switch 문의 default case 여부
+     * @link https://eslint.org/docs/rules/default-case
+     */
+    'default-case': 'off',
   },
 };
