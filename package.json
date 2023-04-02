@@ -1,12 +1,80 @@
 {
-  "name": "code-convention-library",
+  "name": "eslint-config-hyeokjae",
   "version": "1.0.0",
-  "repository": "https://github.com/HyeokjaeLee/code-convention-library",
   "author": "HyeokjaeLee <leehyeokjae97@gmail.com>",
   "license": "MIT",
-  "packageManager": "yarn@3.5.0",
-  "workspaces": [
-    "packages/*",
-    "test/*"
-  ]
+  "repository": "https://github.com/HyeokjaeLee/code-convention-library",
+  "main": "index.js",
+  "files": [
+    "rules",
+    "index.js",
+    "frontend.js",
+    "prettierrc.js",
+    "stylelint.js"
+  ],
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "prettier",
+    "stylelint",
+    "javascript",
+    "typescript",
+    "styleguide",
+    "es2015",
+    "es2016",
+    "es2017",
+    "es2018"
+  ],
+  "scripts": {
+    "code-convetion:eslint": "eslint './**/*.{js,jsx,ts,tsx}'",
+    "code-convetion:eslint:fix": "npm run lint -- --fix",
+    "code-convetion:stylelint": "stylelint './**/*.{js,jsx,ts,tsx}'",
+    "code-convetion:stylelint:fix": "stylelint './**/*.{js,jsx,ts,tsx}' --fix",
+    "code-convetion:prettier": "prettier '**/*.{json,yaml,md,js,jsx,ts,tsx}' --check",
+    "code-convetion:prettier:fix": "prettier '**/*.{json,yaml,md,js,jsx,ts,tsx}' --write",
+    "code-convetion:all": "npm run code-convetion:eslint && npm run code-convetion:stylelint && npm run code-convetion:prettier",
+    "code-convetion:all:fix": "npm run code-convetion:eslint:fix && npm run code-convetion:stylelint:fix && npm run code-convetion:prettier:fix",
+    "deploy": "npm publish",
+    "version": "npm version"
+  },
+  "dependencies": {
+    "@babel/eslint-parser": "^7.19.1",
+    "@stylelint/postcss-css-in-js": "^0.38.0",
+    "@typescript-eslint/eslint-plugin": "^5.47.0",
+    "@typescript-eslint/parser": "^5.47.0",
+    "eslint": "^8.30.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-config-standard-jsx": "^11.0.0",
+    "eslint-import-resolver-typescript": "^3.5.2",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-n": "^15.6.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.31.11",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "postcss": "^8.4.21",
+    "postcss-syntax": "^0.36.2",
+    "prettier": "^2.8.1",
+    "stylelint": "^14.16.1",
+    "stylelint-config-prettier": "^9.0.4",
+    "stylelint-config-standard": "^29.0.0",
+    "stylelint-order": "^6.0.1"
+  },
+  "devDependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@types/react": "^18.0.27",
+    "next": "^13.1.2",
+    "react": "^18.2.0",
+    "typescript": "^5.0.0"
+  },
+  "peerDependencies": {
+    "eslint": "*",
+    "prettier": "*",
+    "stylelint": "*"
+  },
+  "packageManager": "yarn@3.5.0"
 }
