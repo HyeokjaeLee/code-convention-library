@@ -37,9 +37,12 @@
     "deploy": "npm publish",
     "version": "npm version"
   },
-  "dependencies": {
+  "devDependencies": {
     "@babel/eslint-parser": "^7.19.1",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
     "@stylelint/postcss-css-in-js": "^0.38.0",
+    "@types/react": "^18.0.27",
     "@typescript-eslint/eslint-plugin": "^5.47.0",
     "@typescript-eslint/parser": "^5.47.0",
     "eslint": "^8.30.0",
@@ -55,26 +58,21 @@
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.31.11",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "next": "^13.1.2",
     "postcss": "^8.4.21",
     "postcss-syntax": "^0.36.2",
     "prettier": "^2.8.1",
+    "react": "^18.2.0",
     "stylelint": "^14.16.1",
     "stylelint-config-prettier": "^9.0.4",
     "stylelint-config-standard": "^29.0.0",
-    "stylelint-order": "^6.0.1"
-  },
-  "devDependencies": {
-    "@emotion/react": "^11.10.5",
-    "@emotion/styled": "^11.10.5",
-    "@types/react": "^18.0.27",
-    "next": "^13.1.2",
-    "react": "^18.2.0",
+    "stylelint-order": "^6.0.1",
     "typescript": "^5.0.0"
   },
   "peerDependencies": {
-    "eslint": "*",
-    "prettier": "*",
-    "stylelint": "*"
+    "eslint": "^8.0.0",
+    "prettier": "^2.0.0",
+    "stylelint": "^14.0.0"
   },
   "packageManager": "yarn@3.5.0"
 }

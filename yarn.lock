@@ -1673,9 +1673,9 @@ __metadata:
     stylelint-order: ^6.0.1
     typescript: ^5.0.0
   peerDependencies:
-    eslint: "*"
-    prettier: "*"
-    stylelint: "*"
+    eslint: ^8.0.0
+    prettier: ^2.0.0
+    stylelint: ^14.0.0
   languageName: unknown
   linkType: soft
 
