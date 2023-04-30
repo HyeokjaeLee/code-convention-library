@@ -1,6 +1,6 @@
 {
   "name": "hyeokjae-eslint-config",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "HyeokjaeLee <leehyeokjae97@gmail.com>",
   "license": "MIT",
   "repository": "https://github.com/HyeokjaeLee/hyeokjae-convention-library",
@@ -19,7 +19,7 @@
   ],
   "scripts": {
     "rule": "eslint './**/*.{js,jsx,ts,tsx}'",
-    "rule:fix": "npm run rule -- --fix",
+    "rule:fix": "pnpm rule --fix",
     "deploy": "npm publish",
     "version": "npm version"
   },

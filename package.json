@@ -4,11 +4,21 @@
   "license": "MIT",
   "repository": "https://github.com/HyeokjaeLee/hyeokjae-convention-library",
   "scripts": {
-    "rule:eslint": "yarn workspace hyeokjae-eslint-config run rule",
-    "rule:eslint:fix": "yarn workspace hyeokjae-eslint-config run rule:fix",
-    "deploy:eslint": "yarn workspace hyeokjae-eslint-config run deploy",
-    "deploy:prettier": "yarn workspace hyeokjae-prettier-config run deploy",
-    "version:eslint": "yarn workspace hyeokjae-eslint-config run version",
-    "version:prettier": "yarn workspace hyeokjae-prettier-config run version"
+    "rule:eslint": "pnpm --filter hyeokjae-eslint-config run rule",
+    "rule:prettier": "pnpm --filter hyeokjae-prettier-config run rule",
+    "rule:stylelint": "pnpm --filter hyeokjae-stylelint-config run rule",
+    "rule": "pnpm run rule:eslint && pnpm run rule:prettier && pnpm run rule:stylelint",
+    "rule:eslint:fix": "pnpm --filter hyeokjae-eslint-config run rule:fix",
+    "rule:prettier:fix": "pnpm --filter hyeokjae-prettier-config run rule:fix",
+    "rule:stylelint:fix": "pnpm --filter hyeokjae-stylelint-config run rule:fix",
+    "rule:fix": "pnpm run rule:eslint:fix && pnpm run rule:prettier:fix && pnpm run rule:stylelint:fix",
+    "version:eslint": "pnpm --filter hyeokjae-eslint-config run version",
+    "version:prettier": "pnpm --filter hyeokjae-prettier-config run version",
+    "version:stylelint": "pnpm --filter hyeokjae-stylelint-config run version",
+    "version": "pnpm run version:eslint && pnpm run version:prettier && pnpm run version:stylelint",
+    "deploy:eslint": "pnpm --filter hyeokjae-eslint-config run deploy",
+    "deploy:prettier": "pnpm --filter hyeokjae-prettier-config run deploy",
+    "deploy:stylelint": "pnpm --filter hyeokjae-stylelint-config run deploy",
+    "deploy": "pnpm run deploy:eslint && pnpm run deploy:prettier && pnpm run deploy:stylelint"
   }
 }

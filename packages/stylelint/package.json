@@ -16,7 +16,9 @@
   ],
   "scripts": {
     "rule": "stylelint './**/*.{js,jsx,ts,tsx}'",
-    "rule:fix": "stylelint './**/*.{js,jsx,ts,tsx}' --fix"
+    "rule:fix": "stylelint './**/*.{js,jsx,ts,tsx}' --fix",
+    "deploy": "npm publish",
+    "version": "npm version"
   },
   "devDependencies": {
     "stylelint": "^15.6.0",
