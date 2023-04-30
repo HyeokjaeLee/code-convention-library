@@ -1,22 +1,37 @@
 module.exports = {
   extends: [
     'airbnb',
-    'prettier',
+    'airbnb/hooks',
     'plugin:import/recommended',
     'plugin:promise/recommended',
     ...[
       './rules/base',
-      './rules/prettier',
       './rules/promise',
       './rules/import',
+      './rules/react',
+      './rules/jsx-a11y',
     ].map(require.resolve),
   ],
+
   env: {
     commonjs: true,
     es6: true,
     node: true,
     jest: true,
   },
+
+  parserOptions: {
+    ecmaFeatures: { jsx: true },
+    jsx: true,
+    useJSXTextNode: true,
+  },
+
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
+
   overrides: [
     {
       files: ['*.ts', '*.tsx'],

@@ -13,17 +13,13 @@
   "keywords": [
     "eslint",
     "eslintconfig",
-    "prettier",
-    "stylelint",
     "javascript",
     "typescript",
     "styleguide"
   ],
   "scripts": {
-    "eslint": "eslint './**/*.{js,jsx,ts,tsx}'",
-    "eslint:fix": "npm run lint -- --fix",
-    "deploy": "npm publish",
-    "version": "npm version"
+    "rule": "eslint './**/*.{js,jsx,ts,tsx}'",
+    "rule:fix": "yarn rule --fix"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.21.3",
@@ -46,5 +42,10 @@
   },
   "peerDependencies": {
     "eslint": "^8.0.0"
+  },
+  "optionalDependencies": {
+    "prettier": "^2.8.8",
+    "react": "^17.0.0",
+    "typescript": "^4.5.4"
   }
 }

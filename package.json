@@ -4,14 +4,8 @@
   "license": "MIT",
   "repository": "https://github.com/HyeokjaeLee/hyeokjae-convention-library",
   "scripts": {
-    "rule:eslint": "eslint './**/*.{js,jsx,ts,tsx}'",
-    "rule:eslint:fix": "npm run lint -- --fix",
-    "rule:stylelint": "stylelint './**/*.{js,jsx,ts,tsx}'",
-    "rule:stylelint:fix": "stylelint './**/*.{js,jsx,ts,tsx}' --fix",
-    "rule:prettier": "prettier '**/*.{json,yaml,md,js,jsx,ts,tsx}' --check",
-    "rule:prettier:fix": "prettier '**/*.{json,yaml,md,js,jsx,ts,tsx}' --write",
-    "rule:all": "npm run code-convetion:eslint && npm run code-convetion:stylelint && npm run code-convetion:prettier",
-    "rule:all:fix": "npm run code-convetion:eslint:fix && npm run code-convetion:stylelint:fix && npm run code-convetion:prettier:fix",
+    "rule:eslint": "yarn workspace @hyeokjae/eslint-config run rule",
+    "rule:eslint:fix": "yarn workspace @hyeokjae/eslint-config run rule:fix",
     "deploy": "npm publish",
     "version": "npm version"
   },

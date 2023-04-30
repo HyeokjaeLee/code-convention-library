@@ -6,42 +6,22 @@
   "repository": "https://github.com/HyeokjaeLee/hyeokjae-convention-library",
   "main": "index.js",
   "files": [
-    "rules",
-    "index.js",
-    "frontend.js",
-    "prettierrc.js",
-    "stylelint.js"
+    "index.js"
   ],
   "keywords": [
-    "eslint",
-    "eslintconfig",
     "prettier",
-    "stylelint",
     "javascript",
     "typescript",
-    "styleguide",
-    "es2015",
-    "es2016",
-    "es2017",
-    "es2018"
+    "styleguide"
   ],
   "scripts": {
-    "rule:eslint": "eslint './**/*.{js,jsx,ts,tsx}'",
-    "rule:eslint:fix": "npm run lint -- --fix",
-    "rule:stylelint": "stylelint './**/*.{js,jsx,ts,tsx}'",
-    "rule:stylelint:fix": "stylelint './**/*.{js,jsx,ts,tsx}' --fix",
-    "rule:prettier": "prettier '**/*.{json,yaml,md,js,jsx,ts,tsx}' --check",
-    "rule:prettier:fix": "prettier '**/*.{json,yaml,md,js,jsx,ts,tsx}' --write",
-    "rule:all": "npm run code-convetion:eslint && npm run code-convetion:stylelint && npm run code-convetion:prettier",
-    "rule:all:fix": "npm run code-convetion:eslint:fix && npm run code-convetion:stylelint:fix && npm run code-convetion:prettier:fix",
-    "deploy": "npm publish",
-    "version": "npm version"
+    "rule": "prettier '**/*.{json,yaml,md,js,jsx,ts,tsx}' --check",
+    "rule:fix": "prettier '**/*.{json,yaml,md,js,jsx,ts,tsx}' --write"
   },
   "devDependencies": {
     "prettier": "^2.8.8"
   },
   "peerDependencies": {
     "prettier": "^2.0.0"
-  },
-  "packageManager": "yarn@3.5.0"
+  }
 }
