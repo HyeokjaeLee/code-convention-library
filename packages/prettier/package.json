@@ -1,8 +1,30 @@
 {
-  "name": "hyeokjae-convention-library",
+  "name": "@hyeokjae/prettier-config",
+  "version": "1.0.0",
   "author": "HyeokjaeLee <leehyeokjae97@gmail.com>",
   "license": "MIT",
   "repository": "https://github.com/HyeokjaeLee/hyeokjae-convention-library",
+  "main": "index.js",
+  "files": [
+    "rules",
+    "index.js",
+    "frontend.js",
+    "prettierrc.js",
+    "stylelint.js"
+  ],
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "prettier",
+    "stylelint",
+    "javascript",
+    "typescript",
+    "styleguide",
+    "es2015",
+    "es2016",
+    "es2017",
+    "es2018"
+  ],
   "scripts": {
     "rule:eslint": "eslint './**/*.{js,jsx,ts,tsx}'",
     "rule:eslint:fix": "npm run lint -- --fix",
@@ -15,8 +37,11 @@
     "deploy": "npm publish",
     "version": "npm version"
   },
-  "workspaces": [
-    "packages/*"
-  ],
+  "devDependencies": {
+    "prettier": "^2.8.8"
+  },
+  "peerDependencies": {
+    "prettier": "^2.0.0"
+  },
   "packageManager": "yarn@3.5.0"
 }
