@@ -1,6 +1,0 @@
-{
-  "extends": ["./prettier.js", "./index.js"],
-  "parserOptions": {
-    "requireConfigFile": false
-  }
-}

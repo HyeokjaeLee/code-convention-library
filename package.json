@@ -4,13 +4,11 @@
   "license": "MIT",
   "repository": "https://github.com/HyeokjaeLee/hyeokjae-convention-library",
   "scripts": {
-    "rule:eslint": "yarn workspace @hyeokjae/eslint-config run rule",
-    "rule:eslint:fix": "yarn workspace @hyeokjae/eslint-config run rule:fix",
-    "deploy": "npm publish",
-    "version": "npm version"
-  },
-  "workspaces": [
-    "packages/*"
-  ],
-  "packageManager": "yarn@3.5.0"
+    "rule:eslint": "yarn workspace hyeokjae-eslint-config run rule",
+    "rule:eslint:fix": "yarn workspace hyeokjae-eslint-config run rule:fix",
+    "deploy:eslint": "yarn workspace hyeokjae-eslint-config run deploy",
+    "deploy:prettier": "yarn workspace hyeokjae-prettier-config run deploy",
+    "version:eslint": "yarn workspace hyeokjae-eslint-config run version",
+    "version:prettier": "yarn workspace hyeokjae-prettier-config run version"
+  }
 }

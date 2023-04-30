@@ -1,5 +1,5 @@
 {
-  "name": "@hyeokjae/eslint-config",
+  "name": "hyeokjae-eslint-config",
   "version": "1.0.0",
   "author": "HyeokjaeLee <leehyeokjae97@gmail.com>",
   "license": "MIT",
@@ -8,7 +8,7 @@
   "files": [
     "rules",
     "index.js",
-    "frontend.js"
+    "prettier.js"
   ],
   "keywords": [
     "eslint",
@@ -19,7 +19,9 @@
   ],
   "scripts": {
     "rule": "eslint './**/*.{js,jsx,ts,tsx}'",
-    "rule:fix": "yarn rule --fix"
+    "rule:fix": "npm run rule -- --fix",
+    "deploy": "npm publish",
+    "version": "npm version"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.21.3",
