@@ -1,6 +1,6 @@
 {
-  "name": "@hyeokjae/stylelint-config",
-  "version": "1.0.0",
+  "name": "hyeokjae-stylelint-config",
+  "version": "1.0.2",
   "author": "HyeokjaeLee <leehyeokjae97@gmail.com>",
   "license": "MIT",
   "repository": "https://github.com/HyeokjaeLee/hyeokjae-convention-library",
