@@ -3,7 +3,7 @@
   "author": "HyeokjaeLee <leehyeokjae97@gmail.com>",
   "license": "MIT",
   "repository": "https://github.com/HyeokjaeLee/code-convention-config",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "scripts": {
     "test:eslint": "pnpm --filter @hyeokjaelee/eslint-config run rule",
     "test:prettier": "pnpm --filter @hyeokjaelee/prettier-config run rule",
