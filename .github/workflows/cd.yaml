@@ -1,0 +1,35 @@
+name: CD
+
+on:
+  pull_request:
+    branches: ["main"]
+
+env:
+  NODE_VERSION: "18.13"
+  NPM_REGISTRY_URL: "https://npm.pkg.github.com/"
+
+jobs:
+  Versioning:
+    if: "!contains(github.event.head_commit.message, 'chore: version up')"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Regist author
+        run: git config --global user.email "leehyeokjae97@gmail.com" && git config --global user.name "HyeokjaeLee"
+
+      - name: Pull release branch
+        run: git pull
+
+      - name: Set new patch version
+        run: "npm run patch"
+
+      - name: Set new minor version
+        if: "contains(github.event.head_commit.message, '+minor')"
+        run: "npm run minor"
+
+      - name: Set new major version
+        if: "contains(github.event.head_commit.message, '+major')"
+        run: "npm run major"
+
+      - name: Commit version up
+        run: "git add -A && git commit -m 'chore: version up' && git push"
