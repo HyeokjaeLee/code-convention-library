@@ -1,9 +1,9 @@
 {
-  "name": "hyeokjae-prettier-config",
+  "name": "prettier-config-hyeokjae",
   "version": "1.0.1",
   "author": "HyeokjaeLee <leehyeokjae97@gmail.com>",
   "license": "MIT",
-  "repository": "https://github.com/HyeokjaeLee/hyeokjae-convention-library",
+  "repository": "https://github.com/HyeokjaeLee/code-convention-config",
   "main": "index.js",
   "files": [
     "index.js"
@@ -20,7 +20,7 @@
     "deploy": "npm publish",
     "version": "npm version"
   },
-  "devDependencies": {
+  "dependencies": {
     "prettier": "^2.8.8"
   },
   "peerDependencies": {

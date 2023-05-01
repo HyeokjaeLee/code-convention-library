@@ -1,9 +1,9 @@
 {
-  "name": "hyeokjae-stylelint-config",
+  "name": "stylelint-config-hyeokjae",
   "version": "1.0.2",
   "author": "HyeokjaeLee <leehyeokjae97@gmail.com>",
   "license": "MIT",
-  "repository": "https://github.com/HyeokjaeLee/hyeokjae-convention-library",
+  "repository": "https://github.com/HyeokjaeLee/code-convention-config",
   "main": "index.js",
   "files": [
     "index.js"
@@ -15,17 +15,20 @@
     "styleguide"
   ],
   "scripts": {
-    "rule": "stylelint './**/*.{js,jsx,ts,tsx}'",
-    "rule:fix": "stylelint './**/*.{js,jsx,ts,tsx}' --fix",
+    "rule": "stylelint './**/*.{js,jsx,ts,tsx,css,scss,sass}'",
+    "rule:fix": "stylelint './**/*.{js,jsx,ts,tsx,css,scss,sass}' --fix",
     "deploy": "npm publish",
     "version": "npm version"
   },
-  "devDependencies": {
+  "dependencies": {
     "stylelint": "^15.6.0",
     "stylelint-config-standard": "^33.0.0",
     "stylelint-order": "^6.0.3"
   },
   "peerDependencies": {
     "stylelint": "^14.0.0"
+  },
+  "optionalDependencies": {
+    "@stylelint/postcss-css-in-js": "^0.38.0"
   }
 }

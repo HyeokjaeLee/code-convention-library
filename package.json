@@ -1,22 +1,22 @@
 {
-  "name": "hyeokjae-convention-library",
+  "name": "code-convention-config",
   "author": "HyeokjaeLee <leehyeokjae97@gmail.com>",
   "license": "MIT",
-  "repository": "https://github.com/HyeokjaeLee/hyeokjae-convention-library",
+  "repository": "https://github.com/HyeokjaeLee/code-convention-config",
   "scripts": {
-    "test:eslint": "pnpm --filter hyeokjae-eslint-config run rule",
-    "test:prettier": "pnpm --filter hyeokjae-prettier-config run rule",
-    "test:stylelint": "pnpm --filter hyeokjae-stylelint-config run rule",
-    "test": "pnpm run rule:eslint & pnpm run rule:prettier & pnpm run rule:stylelint",
-    "version:eslint": "pnpm --filter hyeokjae-eslint-config run version",
-    "version:prettier": "pnpm --filter hyeokjae-prettier-config run version",
-    "version:stylelint": "pnpm --filter hyeokjae-stylelint-config run version",
+    "test:eslint": "pnpm --filter eslint-config-hyeokjae run rule",
+    "test:prettier": "pnpm --filter prettier-config-hyeokjae run rule",
+    "test:stylelint": "pnpm --filter stylelint-config-hyeokjae run rule",
+    "test": "pnpm run test:eslint & pnpm run test:prettier & pnpm run test:stylelint",
+    "version:eslint": "pnpm --filter eslint-config-hyeokjae run version",
+    "version:prettier": "pnpm --filter prettier-config-hyeokjae run version",
+    "version:stylelint": "pnpm --filter stylelint-config-hyeokjae run version",
     "patch": "pnpm run version:eslint patch & pnpm run version:prettier patch & pnpm run version:stylelint patch",
     "minor": "pnpm run version:eslint minor & pnpm run version:prettier minor & pnpm run version:stylelint minor",
     "major": "pnpm run version:eslint major & pnpm run version:prettier major & pnpm run version:stylelint major",
-    "deploy:eslint": "pnpm --filter hyeokjae-eslint-config run deploy",
-    "deploy:prettier": "pnpm --filter hyeokjae-prettier-config run deploy",
-    "deploy:stylelint": "pnpm --filter hyeokjae-stylelint-config run deploy",
-    "deploy": "pnpm run deploy:eslint && pnpm run deploy:prettier && pnpm run deploy:stylelint"
+    "deploy:eslint": "pnpm --filter eslint-config-hyeokjae run deploy",
+    "deploy:prettier": "pnpm --filter prettier-config-hyeokjae run deploy",
+    "deploy:stylelint": "pnpm --filter stylelint-config-hyeokjae run deploy",
+    "deploy": "pnpm run deploy:eslint & pnpm run deploy:prettier-hyeokjae & pnpm run deploy:stylelint"
   }
 }

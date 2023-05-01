@@ -36,7 +36,7 @@ module.exports = {
      * @description 컬러 네임 허용 여부
      * @link https://stylelint.io/user-guide/rules/color-named/
      */
-    "color-named": "never",
+    "color-named": "always-where-possible",
     /**
      * @description CSS 속성별 정렬
      * @link https://github.com/hudochenkov/stylelint-order/blob/master/rules/properties-order/README.md

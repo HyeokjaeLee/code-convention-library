@@ -1,9 +1,9 @@
 {
-  "name": "hyeokjae-eslint-config",
-  "version": "1.0.2",
+  "name": "eslint-config-hyeokjae",
+  "version": "1.0.3",
   "author": "HyeokjaeLee <leehyeokjae97@gmail.com>",
   "license": "MIT",
-  "repository": "https://github.com/HyeokjaeLee/hyeokjae-convention-library",
+  "repository": "https://github.com/HyeokjaeLee/code-convention-config",
   "main": "index.js",
   "files": [
     "rules",
@@ -23,7 +23,7 @@
     "deploy": "npm publish",
     "version": "npm version"
   },
-  "devDependencies": {
+  "dependencies": {
     "@babel/eslint-parser": "^7.21.3",
     "@typescript-eslint/eslint-plugin": "^5.59.1",
     "@typescript-eslint/parser": "^5.59.1",
