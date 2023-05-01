@@ -14,6 +14,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Set node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          registry-url: ${{ env.NPM_REGISTRY_URL }}
+
       - name: Regist author
         run: git config --global user.email "leehyeokjae97@gmail.com" && git config --global user.name "HyeokjaeLee"
 
