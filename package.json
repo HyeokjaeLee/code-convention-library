@@ -3,6 +3,7 @@
   "author": "HyeokjaeLee <leehyeokjae97@gmail.com>",
   "license": "MIT",
   "repository": "https://github.com/HyeokjaeLee/code-convention-config",
+  "version": "1.1.1",
   "scripts": {
     "test:eslint": "pnpm --filter @hyeokjaelee/eslint-config run rule",
     "test:prettier": "pnpm --filter @hyeokjaelee/prettier-config run rule",
@@ -18,6 +19,5 @@
     "deploy:prettier": "pnpm --filter @hyeokjaelee/prettier-config run deploy",
     "deploy:stylelint": "pnpm --filter @hyeokjaelee/stylelint-config run deploy",
     "deploy": "pnpm run deploy:eslint & pnpm run deploy:prettier & pnpm run deploy:stylelint"
-  },
-  "version": "0.0.1"
+  }
 }
