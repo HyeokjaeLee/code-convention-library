@@ -1,5 +1,5 @@
 {
-  "name": "eslint-config-hyeokjae",
+  "name": "@hyeokjaelee/eslint-config",
   "version": "1.1.0",
   "author": "HyeokjaeLee <leehyeokjae97@gmail.com>",
   "license": "MIT",
@@ -20,7 +20,7 @@
   "scripts": {
     "rule": "eslint './**/*.{js,jsx,ts,tsx}'",
     "rule:fix": "pnpm rule --fix",
-    "deploy": "npm publish",
+    "deploy": "npm publish --access=public",
     "version": "npm version"
   },
   "dependencies": {

@@ -1,5 +1,5 @@
 {
-  "name": "prettier-config-hyeokjae",
+  "name": "@hyeokjaelee/prettier-config",
   "version": "1.1.0",
   "author": "HyeokjaeLee <leehyeokjae97@gmail.com>",
   "license": "MIT",
@@ -17,7 +17,7 @@
   "scripts": {
     "rule": "prettier '**/*.{json,yaml,md,js,jsx,ts,tsx}' --check",
     "rule:fix": "prettier '**/*.{json,yaml,md,js,jsx,ts,tsx}' --write",
-    "deploy": "npm publish",
+    "deploy": "npm publish --access=public",
     "version": "npm version"
   },
   "dependencies": {

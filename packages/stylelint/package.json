@@ -1,5 +1,5 @@
 {
-  "name": "stylelint-config-hyeokjae",
+  "name": "@hyeokjaelee/stylelint-config",
   "version": "1.1.0",
   "author": "HyeokjaeLee <leehyeokjae97@gmail.com>",
   "license": "MIT",
@@ -17,7 +17,7 @@
   "scripts": {
     "rule": "stylelint './**/*.{js,jsx,ts,tsx,css,scss,sass}'",
     "rule:fix": "stylelint './**/*.{js,jsx,ts,tsx,css,scss,sass}' --fix",
-    "deploy": "npm publish",
+    "deploy": "npm publish --access=public",
     "version": "npm version"
   },
   "dependencies": {
