@@ -1,0 +1,53 @@
+{
+  "name": "@hyeokjaelee/eslint-config",
+  "version": "1.1.0",
+  "author": "HyeokjaeLee <leehyeokjae97@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/HyeokjaeLee/code-convention-config",
+  "main": "index.js",
+  "files": [
+    "rules",
+    "index.js",
+    "prettier.js"
+  ],
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "javascript",
+    "typescript",
+    "styleguide"
+  ],
+  "scripts": {
+    "rule": "eslint './**/*.{js,jsx,ts,tsx}'",
+    "rule:fix": "pnpm rule --fix",
+    "deploy": "npm publish --access=public",
+    "version": "npm version"
+  },
+  "dependencies": {
+    "@babel/eslint-parser": "^7.21.3",
+    "@typescript-eslint/eslint-plugin": "^5.59.1",
+    "@typescript-eslint/parser": "^5.59.1",
+    "eslint": "^8.39.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-config-standard-jsx": "^11.0.0",
+    "eslint-import-resolver-typescript": "^3.5.5",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-n": "^15.7.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0"
+  },
+  "peerDependencies": {
+    "eslint": "^8.0.0"
+  },
+  "optionalDependencies": {
+    "prettier": "^2.8.8",
+    "react": "^17.0.0",
+    "typescript": "^4.5.4"
+  }
+}
