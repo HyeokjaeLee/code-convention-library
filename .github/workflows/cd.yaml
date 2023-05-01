@@ -44,7 +44,7 @@ jobs:
         run: "git add -A && git commit -m 'ver: update' && git push"
 
   create_release_tag:
-    if: "contains(github.event.head_commit.message, 'ver: to')"
+    if: "!contains(github.event.head_commit.message, 'ver: ')"
     runs-on: ubuntu-latest
 
     steps:
