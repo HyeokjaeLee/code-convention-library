@@ -44,6 +44,7 @@ jobs:
         run: "git add -A && git commit -m 'ver: update' && git push"
 
   create_release_tag:
+    needs: push_version_commit
     if: "!contains(github.event.head_commit.message, 'ver: ')"
     runs-on: ubuntu-latest
 
