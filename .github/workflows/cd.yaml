@@ -11,7 +11,7 @@ env:
 
 jobs:
   create_release_tag:
-    if: "!contains(github.event.head_commit.message, 'ver: ')"
+    if: "contains(github.event.head_commit.message, 'ver: ')"
     runs-on: ubuntu-latest
 
     steps:
