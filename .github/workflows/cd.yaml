@@ -1,0 +1,67 @@
+name: CD
+
+on:
+  push:
+    branches:
+      - "dev/*"
+
+env:
+  NODE_VERSION: "18.13"
+  NPM_REGISTRY_URL: "https://npm.pkg.github.com/"
+
+jobs:
+  tag:
+    if: "contains(github.event.head_commit.message, 'ver: ')"
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Extract version
+        run: echo "version=$(echo ${{github.event.head_commit.message}} | egrep -o '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}')" >> $GITHUB_ENV
+
+      - uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ env.version }}
+          release_name: ${{ env.version }}
+
+  deploy:
+    needs: tag
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          registry-url: ${{ env.NPM_REGISTRY_URL }}
+
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        id: pnpm-install
+        with:
+          version: 8.3
+          run_install: true
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Deploy
+        run: pnpm run deploy
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

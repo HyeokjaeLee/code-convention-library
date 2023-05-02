@@ -1,15 +1,18 @@
 module.exports = {
+  plugins: ["prettier"],
   extends: [
     "airbnb",
     "airbnb/hooks",
     "plugin:import/recommended",
     "plugin:promise/recommended",
+    "prettier",
     ...[
       "./rules/base",
       "./rules/promise",
       "./rules/import",
       "./rules/react",
       "./rules/jsx-a11y",
+      "./rules/prettier",
     ].map(require.resolve),
   ],
 
