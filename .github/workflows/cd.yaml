@@ -27,39 +27,39 @@ jobs:
           tag_name: ${{ env.version }}
           release_name: ${{ env.version }}
 
-    deploy:
-      needs: tag
-      runs-on: ubuntu-latest
+  deploy:
+    needs: tag
+    runs-on: ubuntu-latest
 
-      steps:
-        - uses: actions/checkout@v3
+    steps:
+      - uses: actions/checkout@v3
 
-        - name: Set node.js ${{ env.NODE_VERSION }}
-          uses: actions/setup-node@v3
-          with:
-            node-version: ${{ env.NODE_VERSION }}
-            registry-url: ${{ env.NPM_REGISTRY_URL }}
+      - name: Set node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          registry-url: ${{ env.NPM_REGISTRY_URL }}
 
-        - uses: pnpm/action-setup@v2
-          name: Install pnpm
-          id: pnpm-install
-          with:
-            version: 8.3
-            run_install: true
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        id: pnpm-install
+        with:
+          version: 8.3
+          run_install: true
 
-        - name: Get pnpm store directory
-          id: pnpm-cache
-          shell: bash
-          run: |
-            echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
 
-        - uses: actions/cache@v3
-          name: Setup pnpm cache
-          with:
-            path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-            key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-            restore-keys: |
-              ${{ runner.os }}-pnpm-store-
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
 
-        - name: Deploy
-          run: pnpm run deploy
+      - name: Deploy
+        run: pnpm run deploy
