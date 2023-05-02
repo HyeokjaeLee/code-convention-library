@@ -70,5 +70,6 @@ module.exports = {
      * @link https://github.com/import-js/eslint-plugin-import/blob/v2.27.5/docs/rules/no-mutable-exports.md
      */
     "import/no-mutable-exports": "off",
+    "import/no-absolute-path": "off",
   },
 };

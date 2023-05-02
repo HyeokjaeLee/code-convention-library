@@ -1,6 +1,0 @@
-# @format
-
-{
-  "extends": ["./index.js", "./css-in-js.js"],
-  "parserOptions": {"requireConfigFile": false},
-}

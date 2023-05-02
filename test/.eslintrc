@@ -1,0 +1,6 @@
+{
+  "extends": [
+    "@hyeokjaelee/eslint-config",
+    "@hyeokjaelee/eslint-config/prettier"
+  ]
+}
