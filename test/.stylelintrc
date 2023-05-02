@@ -1,6 +1,3 @@
 {
-  "extends": [
-    "@hyeokjaelee/stylelint-config",
-    "@hyeokjaelee/stylelint-config/css-in-js"
-  ]
+  "extends": ["@hyeokjaelee/stylelint-config"]
 }

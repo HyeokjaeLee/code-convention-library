@@ -10,42 +10,9 @@ env:
   NPM_REGISTRY_URL: "https://npm.pkg.github.com/"
 
 jobs:
-  push_version_commit:
-    if: "!contains(github.event.head_commit.message, 'ver: ')"
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Regist author
-        run: git config --global user.email "leehyeokjae97@gmail.com" && git config --global user.name "HyeokjaeLee"
-
-      - name: Pull release branch
-        run: git pull
-
-      - uses: pnpm/action-setup@v2
-        id: pnpm-install
-        with:
-          version: 8.3
-          run_install: false
-
-      - name: Set new patch version
-        run: "pnpm version patch -m 'ver: to %s' && pnpm run patch"
-
-      - name: Set new minor version
-        if: "contains(github.event.head_commit.message, '+minor')"
-        run: "pnpm version minor -m 'ver: to %s' && pnpm run minor"
-
-      - name: Set new major version
-        if: "contains(github.event.head_commit.message, '+major')"
-        run: "pnpm version major -m 'ver: to %s' && pnpm run major"
-
-      - name: Commit version up
-        run: "git add -A && git commit -m 'ver: update' && git push"
-
   create_release_tag:
     needs: push_version_commit
-    if: "!contains(github.event.head_commit.message, 'ver: ')"
+    if: "contains(github.event.head_commit.message, 'ver: ')"
     runs-on: ubuntu-latest
 
     steps:

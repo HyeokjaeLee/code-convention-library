@@ -1,6 +1,6 @@
 {
   "name": "@hyeokjaelee/prettier-config",
-  "version": "1.1.6",
+  "version": "1.2.0",
   "author": "HyeokjaeLee <leehyeokjae97@gmail.com>",
   "license": "MIT",
   "repository": "https://github.com/HyeokjaeLee/code-convention-config",
@@ -15,8 +15,6 @@
     "styleguide"
   ],
   "scripts": {
-    "rule": "prettier '**/*.{json,yaml,md,js,jsx,ts,tsx}' --check",
-    "rule:fix": "prettier '**/*.{json,yaml,md,js,jsx,ts,tsx}' --write",
     "deploy": "npm publish --access=public",
     "version": "npm version"
   },

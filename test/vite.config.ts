@@ -1,3 +1,4 @@
+/* stylelint-disable-next-line CssSyntaxError */
 import { defineConfig } from 'vite';
 
 import react from '@vitejs/plugin-react-swc';

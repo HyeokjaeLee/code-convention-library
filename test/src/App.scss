@@ -45,9 +45,9 @@
 .read-the-docs {
   color: #888;
 
-  @include Test;
+  @include test;
 }
 
-@mixin Test() {
+@mixin test() {
   color: red;
 }
