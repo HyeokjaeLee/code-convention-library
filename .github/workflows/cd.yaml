@@ -10,7 +10,7 @@ env:
   NPM_REGISTRY_URL: "https://npm.pkg.github.com/"
 
 jobs:
-  create_release_tag:
+  tag:
     if: "contains(github.event.head_commit.message, 'ver: ')"
     runs-on: ubuntu-latest
 
@@ -26,3 +26,40 @@ jobs:
         with:
           tag_name: ${{ env.version }}
           release_name: ${{ env.version }}
+
+    deploy:
+      needs: tag
+      runs-on: ubuntu-latest
+
+      steps:
+        - uses: actions/checkout@v3
+
+        - name: Set node.js ${{ env.NODE_VERSION }}
+          uses: actions/setup-node@v3
+          with:
+            node-version: ${{ env.NODE_VERSION }}
+            registry-url: ${{ env.NPM_REGISTRY_URL }}
+
+        - uses: pnpm/action-setup@v2
+          name: Install pnpm
+          id: pnpm-install
+          with:
+            version: 8.3
+            run_install: true
+
+        - name: Get pnpm store directory
+          id: pnpm-cache
+          shell: bash
+          run: |
+            echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+        - uses: actions/cache@v3
+          name: Setup pnpm cache
+          with:
+            path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+            key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+            restore-keys: |
+              ${{ runner.os }}-pnpm-store-
+
+        - name: Deploy
+          run: pnpm run deploy

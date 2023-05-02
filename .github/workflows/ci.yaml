@@ -7,9 +7,6 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    env:
-      CSE_NPM_TOKEN: ${{secrets.CSE_NPM_TOKEN}}
-      BUILD_ENV: ${{secrets.BUILD_ENV}}
 
     steps:
       - uses: actions/checkout@v3
