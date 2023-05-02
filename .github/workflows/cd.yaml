@@ -63,3 +63,5 @@ jobs:
 
       - name: Deploy
         run: pnpm run deploy
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
