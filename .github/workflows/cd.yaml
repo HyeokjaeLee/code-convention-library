@@ -7,7 +7,6 @@ on:
 
 env:
   NODE_VERSION: "18.13"
-  NPM_REGISTRY_URL: "https://npm.pkg.github.com/"
 
 jobs:
   tag:
