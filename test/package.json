@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "eslint": "eslint './src/**/*.{js,ts,tsx}'",
     "eslint:fix": "eslint './src/**/*.{js,ts,tsx}' --fix",
-    "stylelint": "stylelint './src/**/*.{js,ts,tsx,scss,css}'",
+    "stylelint": "stylelint './src/**/*.{js,ts,tsx,scss,css}' --config-basedir",
     "stylelint:fix": "stylelint './src/**/*.{js,ts,tsx,scss,css}' --fix",
     "prettier": "prettier './src/*.{json,yaml,md,js,ts,tsx}' --check",
     "prettier:fix": "prettier './src/*.{json,yaml,md,js,ts,tsx}' --write"
