@@ -34,7 +34,7 @@ jobs:
       - name: Test prettier
         run: pnpm test:prettier
 
-  update_main_version:
+  update:
     needs: test
     runs-on: ubuntu-latest
 
@@ -54,56 +54,32 @@ jobs:
 
       - name: Set new patch version
         if: "!contains(github.event.head_commit.message, '+m')"
-        run: "npm version patch -m 'ver: %s'"
+        run: "npm version patch -m 'ver: %s' && pnpm run patch"
 
       - name: Set new minor version
         if: "contains(github.event.head_commit.message, '+minor')"
-        run: "npm version minor -m 'ver: %s'"
+        run: "npm version minor -m 'ver: %s' && pnpm run minor"
 
       - name: Set new major version
         if: "contains(github.event.head_commit.message, '+major')"
-        run: "npm version major -m 'ver: %s'"
+        run: "npm version major -m 'ver: %s' && pnpm run major"
 
       - name: Commit new version
-        run: git push
+        run: "git add -A && git commit --amend && git push"
 
-  update_package_version:
-    needs: test
+  tag:
+    needs: update
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
 
-      - name: Set node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v3
+      - name: Extract version
+        run: echo "version=$(echo ${{github.event.head_commit.message}} | egrep -o '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}')" >> $GITHUB_ENV
+
+      - uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          node-version: ${{ env.NODE_VERSION }}
-          registry-url: https://registry.npmjs.org/
-
-      - uses: pnpm/action-setup@v2
-        name: Install pnpm
-        id: pnpm-install
-        with:
-          version: 8.3
-          run_install: true
-
-      - name: Regist author
-        run: git config --global user.email "leehyeokjae97@gmail.com" && git config --global user.name "HyeokjaeLee"
-
-      - name: Pull release branch
-        run: git pull
-
-      - name: Set new patch version
-        if: "!contains(github.event.head_commit.message, '+m')"
-        run: "pnpm run patch"
-
-      - name: Set new minor version
-        if: "contains(github.event.head_commit.message, '+minor')"
-        run: "pnpm run minor"
-
-      - name: Set new major version
-        if: "contains(github.event.head_commit.message, '+major')"
-        run: "pnpm run major"
-
-      - name: Commit new version
-        run: "git add -A && git commit -m 'ver: update' && git push"
+          tag_name: ${{ env.version }}
+          release_name: ${{ env.version }}
