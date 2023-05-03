@@ -106,4 +106,4 @@ jobs:
         run: "pnpm run major"
 
       - name: Commit new version
-        run: "git add -A && git && git push && git commit -m 'ver: update'"
+        run: "git add -A && git commit -m 'ver: update' && git push"
