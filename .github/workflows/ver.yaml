@@ -57,7 +57,7 @@ jobs:
       - name: Regist author
         run: git config --global user.email "leehyeokjae97@gmail.com" && git config --global user.name "HyeokjaeLee"
 
-      - name: Pull release branch
+      - name: Pull branch
         run: git pull
 
       - name: Set new patch version
@@ -79,4 +79,28 @@ jobs:
           path: .
 
       - name: Commit new version
-        run: "git reset HEAD^ && git add -A && git commit -m '${{ steps.get-version.outputs.version }}' && git push"
+        run: "git reset HEAD^ && git add -A && git commit -m 'ver: ${{ steps.get-version.outputs.version }}' && git push"
+
+  tag:
+    needs: update
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Pull branch
+        run: git pull
+
+      - name: Get version
+        id: get-version
+        uses: beaconbrigade/package-json-version@v0.3
+        with:
+          path: .
+
+      - name: Create release & tag
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ steps.get-version.outputs.version }}
+          release_name: ${{ steps.get-version.outputs.version }}
