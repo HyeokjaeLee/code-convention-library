@@ -99,13 +99,13 @@ importers:
         version: 18.2.0(react@18.2.0)
     devDependencies:
       '@hyeokjaelee/eslint-config':
-        specifier: '*'
+        specifier: latest
         version: link:../packages/eslint
       '@hyeokjaelee/prettier-config':
-        specifier: '*'
+        specifier: latest
         version: link:../packages/prettier
       '@hyeokjaelee/stylelint-config':
-        specifier: '*'
+        specifier: latest
         version: link:../packages/stylelint
       '@types/react':
         specifier: ^18.0.28
