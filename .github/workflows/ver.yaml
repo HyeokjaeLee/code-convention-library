@@ -68,7 +68,7 @@ jobs:
         run: git push
 
   update_package_version:
-    needs: update_main_version
+    needs: test
     runs-on: ubuntu-latest
 
     steps:
