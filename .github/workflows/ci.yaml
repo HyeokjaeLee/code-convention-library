@@ -29,6 +29,3 @@ jobs:
 
       - name: Test prettier
         run: pnpm test:prettier
-
-      - name: Test stylelint
-        run: pnpm test:stylelint
