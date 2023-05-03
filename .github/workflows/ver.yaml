@@ -52,17 +52,24 @@ jobs:
       - name: Pull release branch
         run: git pull
 
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        id: pnpm-install
+        with:
+          version: 8.3
+          run_install: false
+
       - name: Set new patch version
         if: "!contains(github.event.head_commit.message, '+m')"
-        run: "npm version patch -m 'ver: %s' && pnpm run patch"
+        run: "pnpm version patch -m 'ver: %s' && pnpm run patch"
 
       - name: Set new minor version
         if: "contains(github.event.head_commit.message, '+minor')"
-        run: "npm version minor -m 'ver: %s' && pnpm run minor"
+        run: "pnpm version minor -m 'ver: %s' && pnpm run minor"
 
       - name: Set new major version
         if: "contains(github.event.head_commit.message, '+major')"
-        run: "npm version major -m 'ver: %s' && pnpm run major"
+        run: "pnpm version major -m 'ver: %s' && pnpm run major"
 
       - name: Commit new version
         run: "git add -A && git commit --amend && git push"
