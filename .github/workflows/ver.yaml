@@ -1,8 +1,8 @@
-name: CD
+name: VER
 
 on:
   push:
-    branches: "main"
+    branches: "dev/*"
 
 env:
   NODE_VERSION: "18.13"
