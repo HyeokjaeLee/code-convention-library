@@ -25,11 +25,11 @@
     "typescript": "^5.0.2",
     "vite": "^4.3.2",
     "eslint": "*",
-    "@hyeokjaelee/eslint-config": "*",
+    "@hyeokjaelee/eslint-config": "latest",
     "prettier": "*",
-    "@hyeokjaelee/prettier-config": "*",
+    "@hyeokjaelee/prettier-config": "latest",
     "stylelint": "*",
-    "@hyeokjaelee/stylelint-config": "*",
+    "@hyeokjaelee/stylelint-config": "latest",
     "sass": "^1.62.1"
   }
 }
