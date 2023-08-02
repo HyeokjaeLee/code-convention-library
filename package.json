@@ -4,7 +4,7 @@
   "license": "MIT",
   "repository": "https://github.com/HyeokjaeLee/code-convention-config",
   "version": "1.3.2",
-  "packageManager": "pnpm@8.6.3",
+  "packageManager": "pnpm@8.6.11",
   "scripts": {
     "test:eslint": "pnpm --filter @code-convention-library/test run eslint",
     "test:eslint:fix": "pnpm --filter @code-convention-library/test run eslint:fix",
@@ -23,5 +23,8 @@
     "deploy:prettier": "pnpm --filter @hyeokjaelee/prettier-config run deploy",
     "deploy:stylelint": "pnpm --filter @hyeokjaelee/stylelint-config run deploy",
     "deploy": "pnpm run deploy:eslint & pnpm run deploy:prettier & pnpm run deploy:stylelint"
+  },
+  "devDependencies": {
+    "pnpm": "^8.6.11"
   }
 }
