@@ -20,10 +20,10 @@
     "version": "npm version"
   },
   "dependencies": {
-    "stylelint": "^15.6.0",
+    "stylelint": "^15.10.2",
     "stylelint-config-recommended-scss": "^11.0.0",
-    "@stylelint/postcss-css-in-js": "^0.38.0",
-    "stylelint-order": "^6.0.3"
+    "stylelint-order": "^6.0.3",
+    "stylelint-scss": "^5.0.1"
   },
   "peerDependencies": {
     "stylelint": "^15.6.0"
