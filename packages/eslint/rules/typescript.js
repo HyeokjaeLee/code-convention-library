@@ -46,8 +46,8 @@ module.exports = {
       {
         js: "never",
         jsx: "never",
-        ts: "never",
-        tsx: "never",
+        ts: "off",
+        tsx: "off",
         json: "never",
       },
     ],

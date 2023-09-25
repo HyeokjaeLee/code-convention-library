@@ -23,8 +23,5 @@
     "deploy:prettier": "pnpm --filter @hyeokjaelee/prettier-config run deploy",
     "deploy:stylelint": "pnpm --filter @hyeokjaelee/stylelint-config run deploy",
     "deploy": "pnpm run deploy:eslint & pnpm run deploy:prettier & pnpm run deploy:stylelint"
-  },
-  "devDependencies": {
-    "pnpm": "^8.6.11"
   }
 }
